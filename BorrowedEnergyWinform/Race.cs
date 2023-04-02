@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BorrowedEnergy
+namespace BorrowedEnergyWinform
 {
     internal class Race
     {
         public Dictionary<string, int> race_runner_positions { get; private set; }
         public Dictionary<int, string> race_finishers { get; private set; } = new Dictionary<int, string>();
         public int race_distance { get; private set; }
+
+        public bool finished => race_finishers.Count == race_runner_positions.Count;
 
         public Race(List<string> runner_names)
         {
@@ -66,27 +68,36 @@ namespace BorrowedEnergy
                 related_runners.AddRange(immediately_behind);
             }
 
-            return new RunnerRaceStatus(current_place, distance_remaining, num_runners_finished, runners_tied_with, related_runners);
+            return new RunnerRaceStatus
+            {
+                current_position = current_position,
+                current_place = current_place,
+                distance_remaining = distance_remaining,
+                num_runners_finished = num_runners_finished,
+                runners_tied_with = runners_tied_with,
+                related_runners = related_runners
+            };
+
+        }
+
+        public void MoveRunner(Runner runner, int distance)
+        {
+            race_runner_positions[runner.name] += distance;
+        }
+
+        public void UpdateFinishers()
+        {
+            throw new NotImplementedException();
         }
     }
 
     internal class RunnerRaceStatus
     {
-        public static int current_place;
-        public static int distance_remaining;
-        public static int num_runners_finished;
-        public static List<string> runners_tied_with;
-        public static List<string> related_runners;
-
-        public RunnerRaceStatus (
-            int in_current_place, int in_distance_remaining, int in_num_runners_finished,
-            List<string> in_runners_tied_with, List<string> in_related_runners)
-        {
-            current_place = in_current_place;
-            distance_remaining = in_distance_remaining;
-            num_runners_finished = in_num_runners_finished;
-            runners_tied_with = in_runners_tied_with;
-            related_runners = in_related_runners;
-        }
+        public int current_position { get; init; }
+        public int current_place { get; init; }
+        public int distance_remaining { get; init; }
+        public int num_runners_finished { get; init; }
+        public List<string>? runners_tied_with { get; init; }
+        public List<string>? related_runners { get; init; }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BorrowedEnergy
+namespace BorrowedEnergyWinform
 {
     internal class Runner
     {
@@ -14,7 +14,7 @@ namespace BorrowedEnergy
         public string name { get; private set; }
         private bool human_player;
 
-        public static int seed_num;
+        public int seed_num { get; init; }
         public int max_energy { get; private set; }
         public int current_energy { get; private set; }
         
@@ -50,6 +50,25 @@ namespace BorrowedEnergy
         public void StartDay()
         {
             current_energy = Math.Min(current_energy + daily_energy_recharge, max_energy);
+        }
+
+        public int ChooseDistance(RunnerRaceStatus race_status)
+        {
+            int max_selectable_distance = Calculations.Instance.DistancePerEnergy.Where(x => x.Value <= current_energy).Select(x => x.Key).Max();
+
+            int selected_distance = Calculations.Instance.rng.Next(max_selectable_distance + 1);
+
+            int total_distance = selected_distance + bonus_distance;
+            if (race_status.current_position == 0)
+            {
+                total_distance += bonus_start_distance;
+            }
+            if (total_distance >= race_status.distance_remaining)
+            {
+                total_distance += bonus_finish_distance;
+            }
+
+            return total_distance;
         }
     }
 }
