@@ -10,21 +10,15 @@ using System.Windows.Forms;
 
 namespace BorrowedEnergyWinform
 {
-    public partial class TitleScreenForm : Form
+    public partial class SeasonStatusForm : Form
     {
 
         GameContainerForm parentForm;
 
-        public TitleScreenForm(GameContainerForm parentForm)
+        public SeasonStatusForm(GameContainerForm parentForm)
         {
             InitializeComponent();
             this.parentForm = parentForm;
-        }
-
-        private void submitPlayerEnergyButton_Click(object sender, EventArgs e)
-        {
-            parentForm.InitGame(int.Parse(playerEnergyTextBox.Text));
-            parentForm.ShowSeasonStatus();
         }
     }
 }

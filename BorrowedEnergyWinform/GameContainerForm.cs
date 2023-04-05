@@ -1,15 +1,42 @@
 namespace BorrowedEnergyWinform
 {
-    public partial class GameForm : Form
+    public partial class GameContainerForm : Form
     {
         Game game;
+        TitleScreenForm titleScreen;
+        SeasonStatusForm seasonStatus;
+        List<Form> forms = new List<Form>();
         
-        public GameForm()
+        public GameContainerForm()
         {
             InitializeComponent();
-            TitleScreenForm titleScreen = new TitleScreenForm();
-            titleScreen.MdiParent = this;
+            
+            titleScreen = new TitleScreenForm(this);
+            forms.Add(titleScreen);
+
+            seasonStatus = new SeasonStatusForm(this);
+            forms.Add(seasonStatus);
+
+            foreach(Form form in forms)
+            {
+                form.MdiParent = this;
+            }
+
             titleScreen.Show();
+        }
+
+        public void InitGame(int playerEnergy)
+        {
+            this.game = new Game(playerEnergy);
+        }
+
+        public void ShowSeasonStatus()
+        {
+            foreach(Form form in forms)
+            {
+                form.Hide();
+            }
+            seasonStatus.Show();
         }
 
     }

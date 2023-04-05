@@ -1,6 +1,6 @@
 ﻿namespace BorrowedEnergyWinform
 {
-    partial class TitleScreenForm
+    partial class SeasonStatusForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.playerEnergyTextBox = new System.Windows.Forms.TextBox();
-            this.submitPlayerEnergyButton = new System.Windows.Forms.Button();
+            this.seasonStatusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // playerEnergyTextBox
+            // seasonStatusLabel
             // 
-            this.playerEnergyTextBox.Location = new System.Drawing.Point(218, 104);
-            this.playerEnergyTextBox.Name = "playerEnergyTextBox";
-            this.playerEnergyTextBox.Size = new System.Drawing.Size(100, 23);
-            this.playerEnergyTextBox.TabIndex = 0;
+            this.seasonStatusLabel.AutoSize = true;
+            this.seasonStatusLabel.Location = new System.Drawing.Point(56, 41);
+            this.seasonStatusLabel.Name = "seasonStatusLabel";
+            this.seasonStatusLabel.Size = new System.Drawing.Size(0, 15);
+            this.seasonStatusLabel.TabIndex = 0;
             // 
-            // submitPlayerEnergyButton
-            // 
-            this.submitPlayerEnergyButton.Location = new System.Drawing.Point(227, 156);
-            this.submitPlayerEnergyButton.Name = "submitPlayerEnergyButton";
-            this.submitPlayerEnergyButton.Size = new System.Drawing.Size(75, 23);
-            this.submitPlayerEnergyButton.TabIndex = 1;
-            this.submitPlayerEnergyButton.Text = "Submit";
-            this.submitPlayerEnergyButton.UseVisualStyleBackColor = true;
-            this.submitPlayerEnergyButton.Click += new System.EventHandler(this.submitPlayerEnergyButton_Click);
-            // 
-            // TitleScreenForm
+            // SeasonStatusForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.submitPlayerEnergyButton);
-            this.Controls.Add(this.playerEnergyTextBox);
+            this.Controls.Add(this.seasonStatusLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "TitleScreenForm";
+            this.Name = "SeasonStatusForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TitleScreenForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -69,7 +58,6 @@
 
         #endregion
 
-        private TextBox playerEnergyTextBox;
-        private Button submitPlayerEnergyButton;
+        private Label seasonStatusLabel;
     }
 }

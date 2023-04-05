@@ -1,6 +1,6 @@
 ﻿namespace BorrowedEnergyWinform
 {
-    partial class GameForm
+    partial class GameContainerForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -40,7 +40,7 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
             // 
-            // GameForm
+            // GameContainerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -48,9 +48,8 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "GameForm";
+            this.Name = "GameContainerForm";
             this.Text = "Borrowed Energy";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
