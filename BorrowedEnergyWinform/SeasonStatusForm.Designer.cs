@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.seasonStatusLabel = new System.Windows.Forms.Label();
+            this.seasonStandingsDatagrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.seasonStandingsDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // seasonStatusLabel
+            // seasonStandingsDatagrid
             // 
-            this.seasonStatusLabel.AutoSize = true;
-            this.seasonStatusLabel.Location = new System.Drawing.Point(56, 41);
-            this.seasonStatusLabel.Name = "seasonStatusLabel";
-            this.seasonStatusLabel.Size = new System.Drawing.Size(0, 15);
-            this.seasonStatusLabel.TabIndex = 0;
+            this.seasonStandingsDatagrid.AllowUserToAddRows = false;
+            this.seasonStandingsDatagrid.AllowUserToDeleteRows = false;
+            this.seasonStandingsDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.seasonStandingsDatagrid.Location = new System.Drawing.Point(68, 64);
+            this.seasonStandingsDatagrid.Name = "seasonStandingsDatagrid";
+            this.seasonStandingsDatagrid.ReadOnly = true;
+            this.seasonStandingsDatagrid.RowTemplate.Height = 25;
+            this.seasonStandingsDatagrid.Size = new System.Drawing.Size(696, 312);
+            this.seasonStandingsDatagrid.TabIndex = 1;
             // 
             // SeasonStatusForm
             // 
@@ -45,19 +50,19 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.seasonStatusLabel);
+            this.Controls.Add(this.seasonStandingsDatagrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SeasonStatusForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TitleScreenForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.seasonStandingsDatagrid)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Label seasonStatusLabel;
+        private DataGridView seasonStandingsDatagrid;
     }
 }

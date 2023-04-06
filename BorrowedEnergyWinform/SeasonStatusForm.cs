@@ -20,5 +20,25 @@ namespace BorrowedEnergyWinform
             InitializeComponent();
             this.parentForm = parentForm;
         }
+
+        public void Show(Dictionary<Runner, int> runnerPoints)
+        {
+            DataTable seasonStandingData = new DataTable();
+            seasonStandingData.Columns.Add("Runner");
+            seasonStandingData.Columns.Add("Pre-Season Seed");
+            seasonStandingData.Columns.Add("Current Point Total");
+
+            foreach (var rp in runnerPoints)
+            {
+                DataRow row = seasonStandingData.Rows.Add();
+                row[0] = rp.Key.name;
+                row[1] = rp.Key.seed_num;
+                row[2] = rp.Value;
+            }
+
+            seasonStandingsDatagrid.DataSource = seasonStandingData;
+            
+            base.Show();
+        }
     }
 }

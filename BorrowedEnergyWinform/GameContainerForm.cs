@@ -36,7 +36,7 @@ namespace BorrowedEnergyWinform
             {
                 form.Hide();
             }
-            seasonStatus.Show();
+            seasonStatus.Show(game.RunnerPoints());
         }
 
     }

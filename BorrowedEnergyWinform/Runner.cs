@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BorrowedEnergyWinform
 {
-    internal class Runner
+    public class Runner
     {
         /// <summary>
         /// Unique identifier.

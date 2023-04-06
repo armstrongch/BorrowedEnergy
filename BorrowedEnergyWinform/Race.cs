@@ -91,7 +91,7 @@ namespace BorrowedEnergyWinform
         }
     }
 
-    internal class RunnerRaceStatus
+    public class RunnerRaceStatus
     {
         public int current_position { get; init; }
         public int current_place { get; init; }
