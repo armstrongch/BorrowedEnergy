@@ -1,6 +1,6 @@
 ﻿namespace BorrowedEnergyWinform
 {
-    partial class SeasonStatusForm
+    partial class TitleScreenForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.seasonStandingsDatagrid = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.seasonStandingsDatagrid)).BeginInit();
+            this.playerEnergyTextBox = new System.Windows.Forms.TextBox();
+            this.submitPlayerEnergyButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // seasonStandingsDatagrid
+            // playerEnergyTextBox
             // 
-            this.seasonStandingsDatagrid.AllowUserToAddRows = false;
-            this.seasonStandingsDatagrid.AllowUserToDeleteRows = false;
-            this.seasonStandingsDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.seasonStandingsDatagrid.Location = new System.Drawing.Point(68, 64);
-            this.seasonStandingsDatagrid.Name = "seasonStandingsDatagrid";
-            this.seasonStandingsDatagrid.ReadOnly = true;
-            this.seasonStandingsDatagrid.RowTemplate.Height = 25;
-            this.seasonStandingsDatagrid.Size = new System.Drawing.Size(696, 312);
-            this.seasonStandingsDatagrid.TabIndex = 1;
+            this.playerEnergyTextBox.Location = new System.Drawing.Point(218, 104);
+            this.playerEnergyTextBox.Name = "playerEnergyTextBox";
+            this.playerEnergyTextBox.Size = new System.Drawing.Size(100, 23);
+            this.playerEnergyTextBox.TabIndex = 0;
             // 
-            // SeasonStatusForm
+            // submitPlayerEnergyButton
+            // 
+            this.submitPlayerEnergyButton.Location = new System.Drawing.Point(227, 156);
+            this.submitPlayerEnergyButton.Name = "submitPlayerEnergyButton";
+            this.submitPlayerEnergyButton.Size = new System.Drawing.Size(75, 23);
+            this.submitPlayerEnergyButton.TabIndex = 1;
+            this.submitPlayerEnergyButton.Text = "Submit";
+            this.submitPlayerEnergyButton.UseVisualStyleBackColor = true;
+            this.submitPlayerEnergyButton.Click += new System.EventHandler(this.submitPlayerEnergyButton_Click);
+            // 
+            // TitleScreenForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.seasonStandingsDatagrid);
+            this.Controls.Add(this.submitPlayerEnergyButton);
+            this.Controls.Add(this.playerEnergyTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SeasonStatusForm";
+            this.Name = "TitleScreenForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TitleScreenForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.seasonStandingsDatagrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DataGridView seasonStandingsDatagrid;
+        private TextBox playerEnergyTextBox;
+        private Button submitPlayerEnergyButton;
     }
 }

@@ -9,9 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="SeasonStatusForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="Forms\SeasonStatusForm.cs" />
   </ItemGroup>
 
 </Project>

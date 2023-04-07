@@ -2,7 +2,7 @@ namespace BorrowedEnergyWinform
 {
     public partial class GameContainerForm : Form
     {
-        Game game;
+        Game? game;
         TitleScreenForm titleScreen;
         SeasonStatusForm seasonStatus;
         List<Form> forms = new List<Form>();

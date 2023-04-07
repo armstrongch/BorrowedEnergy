@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BorrowedEnergyWinform
 {
-    public partial class SeasonStatusForm : Form
+    public partial class SeasonStatusForm : GameContainerChildForm
     {
 
         GameContainerForm parentForm;

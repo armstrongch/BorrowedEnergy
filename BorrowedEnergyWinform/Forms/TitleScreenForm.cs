@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BorrowedEnergyWinform
 {
-    public partial class TitleScreenForm : Form
+    public partial class TitleScreenForm : GameContainerChildForm
     {
 
         GameContainerForm parentForm;
